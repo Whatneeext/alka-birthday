@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Alka 🎂</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+      background-size: 300% 300%;
+      animation: bgMove 8s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 24px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(14px);
+      box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      color: #fff;
+      z-index: 10;
+      position: relative;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-shadow: 0px 3px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .poem {
+      margin: 18px auto;
+      max-width: 720px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.18);
+      box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.12);
+    }
+
+    .photo-preview {
+      width: 240px;
+      height: 240px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+      margin: 22px auto;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .photo-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .btn {
+      cursor: pointer;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    footer {
+      margin-top: 22px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Overlay */
+    #startOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlayBox {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 30px;
+      border-radius: 22px;
+      text-align: center;
+      color: white;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .overlayBox h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .overlayBox p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 14px;
+      top: -20px;
+      opacity: 0.9;
+      z-index: 999;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(720deg); }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: fixed;
+      bottom: -200px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      z-index: 998;
+      animation: floatUp linear forwards;
+      opacity: 0.95;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 70px;
+      background: rgba(255,255,255,0.7);
+      left: 50%;
+      top: 78px;
+      transform: translateX(-50%);
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-130vh); }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      .photo-preview {
+        width: 190px;
+        height: 190px;
+      }
+
+      .poem {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Start Overlay -->
+  <div id="startOverlay">
+    <div class="overlayBox">
+      <h2>🎂 Happy Birthday Alka 🎉</h2>
+      <p>Tap Start to play music & begin celebration 🎶🎊🎈</p>
+      <button class="btn" onclick="startExperience()">▶ Start Celebration</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h1>🎉 Happy Birthday Alka 🎂</h1>
+    <div class="subtitle">A beautiful wish from <b>Avnish</b> 💝</div>
+
+    <div class="photo-preview">
+      <img src="alka.jpg" alt="Alka Photo" />
+    </div>
+
+    <div class="poem">
+      🌸 <b>Birthday Poem</b> 🌸 <br><br>
+
+      Alka, you shine like morning light, <br>
+      Making every moment warm and bright. <br><br>
+
+      May laughter dance in all you do, <br>
+      May every dream come shining true. <br><br>
+
+      May love surround you year by year, <br>
+      With happiness always staying near. <br><br>
+
+      🎂 Happy Birthday, Alka dear, <br>
+      From Avnish—wishing your best year! ✨
+    </div>
+
+    <footer>
+      Made with ❤️ by Avnish
+    </footer>
+  </div>
+
+  <!-- Auto Loaded MP3 -->
+  <audio id="birthdaySong" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const song = document.getElementById("birthdaySong");
+    const overlay = document.getElementById("startOverlay");
+
+    function startExperience() {
+      song.play();
+      overlay.style.display = "none";
+
+      // Start animations
+      startConfetti();
+      startBalloons();
+    }
+
+    // Confetti Generator
+    function startConfetti() {
+      setInterval(() => {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background = `hsl(${Math.random() * 360}, 90%, 60%)`;
+        confetti.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        confetti.style.width = (Math.random() * 8 + 6) + "px";
+        confetti.style.height = (Math.random() * 12 + 8) + "px";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 7000);
+      }, 150);
+    }
+
+    // Balloon Generator
+    function startBalloons() {
+      setInterval(() => {
+        const balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.background = `hsl(${Math.random() * 360}, 85%, 65%)`;
+        balloon.style.animationDuration = (Math.random() * 5 + 6) + "s";
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => balloon.remove(), 12000);
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
